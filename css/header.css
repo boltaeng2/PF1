@@ -1,0 +1,125 @@
+header{
+  width: 100%;
+  border-bottom: 1px solid #ccc;
+  position: absolute;
+  z-index: 1;
+  animation-name: hnb-down;
+  animation-duration: 1s;
+  animation-timing-function: ease-out;
+}
+@keyframes hnb-down{
+  0%{
+    top: -100px;
+  }
+  100%{
+    top: 0px;
+  }
+}
+header nav{
+  width: 1440px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  color: white;
+  height: 100px;
+}
+header nav > h1{
+  display: flex;
+  align-items: center;
+}
+header nav > h1::before{
+  content:"";
+  background-image: url(../img/png/logo.png);
+  width: 40px;
+  height: 30px;
+  display: inline-block;
+  background-repeat: no-repeat;
+  background-position: center;
+  vertical-align: -12px;
+  background-size: contain;
+  margin: 2px 7px 0 0;
+  z-index: 1;
+}
+header nav > h1 a{
+  font-size: 20px;
+  color: white;
+  margin-left: 5px;
+}
+header nav > ul{
+  display: flex;
+}
+header nav > ul::before{
+  content: "";
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 100px;
+  background-color: white;
+  opacity: 0;
+  transition: .4s;
+  top: 0;
+  left: 0;
+}
+header nav > ul:hover::before{
+  height: 370px;
+  opacity: 1;
+}
+header nav > ul > li{
+  position: relative;
+  z-index: 1;
+}
+header nav > ul > li > a {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  padding: 40px 35px;
+  font-size: 17px;
+  color: white;
+  font-weight: bold;
+  display: block;
+  box-sizing: border-box;
+  position: relative;
+}
+header nav > ul > li > a:hover{
+  transition: 0.4s;
+  color: black;
+  border-color: yellow;
+}
+header nav > ul > li > a::after{
+  content: "";
+  width: 100%;
+  height: 3px;
+  background-color: #ffc72c;
+  position: absolute;
+  left: 0;
+  bottom: -1px;
+  transition: .4s;
+  transform: scaleX(0);
+}
+header nav > ul:hover > li > a{
+  color: black;
+  transition: .4s;
+}
+header nav > ul > li > a:hover::after{
+  transform: scaleX(1);
+}
+header nav > ul > li > ul.sub{
+  text-align: center;
+  padding-top: 20px;
+  opacity: 0;
+  transition: .4s;
+  position: relative;
+  z-index: 1;
+}
+header nav > ul > li > ul.sub:hover{
+}
+header nav > ul:hover > li > ul.sub{
+   /* "none;" 처음 상태로 */
+  opacity: 1;
+}
+header nav > ul > li > ul.sub li{
+  
+}
+header nav > ul > li > ul.sub li a{
+  line-height: 2;
+}
